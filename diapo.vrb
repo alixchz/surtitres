@@ -1,0 +1,5 @@
+\frametitle{Exemple de code}
+\begin{verbatim}
+#include <stdio.h>
+int main(){ printf("Hello\n"); }
+\end{verbatim}

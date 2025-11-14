@@ -1,0 +1,45 @@
+% beamer_black_white.tex
+% Présentation Beamer : fond noir, texte blanc
+% Compiler avec pdflatex ou xelatex
+
+\documentclass[8pt,aspectratio=169]{beamer}
+
+% Packages utiles
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{minted} % si vous voulez du code (nécessite -shell-escape)
+
+% Couleurs : fond noir, texte blanc
+\setbeamercolor{background canvas}{bg=black}
+\setbeamercolor{normal text}{fg=white}
+\setbeamercolor{frametitle}{fg=white,bg=black}
+\setbeamercolor{title}{fg=white,bg=black}
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{date}{fg=white}
+\setbeamercolor{section in toc}{fg=white}
+\setbeamercolor{subsection in toc}{fg=white}
+\setbeamercolor{item}{fg=white}
+\setbeamercolor{enumerate item}{fg=white}
+\setbeamercolor{block title}{fg=black,bg=white!10} % titres de block légèrement clairs
+\setbeamercolor{block body}{fg=white,bg=black}
+\setbeamercolor{caption name}{fg=white}
+% Create a light gray color
+\usepackage{xcolor}
+\definecolor{lightgray}{rgb}{0.7, 0.7, 0.7}
+
+\setbeamersize{text margin left=2cm, text margin right=2cm}
+
+% Remove navigation symbols (optionnel)
+\setbeamertemplate{navigation symbols}{}
+
+\begin{document}
+
+\input{frames_aprite.tex}
+\input{frame_blank.tex}
+\input{frames_lacidaremlamano.tex}
+
+\end{document}
