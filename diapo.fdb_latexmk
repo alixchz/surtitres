@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1763140976.8694 "/home/alix/surtitres/diapo.tex" "diapo.pdf" "diapo" 1763140977.92069 0
+["pdflatex"] 1763252007.2696 "/home/alix/surtitres/diapo.tex" "diapo.pdf" "diapo" 1763252008.81471 0
   "/etc/texmf/web2c/texmf.cnf" 1732549628.06695 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/alix/surtitres/diapo.tex" 1763139625.45176 1358 714f708f4572205ba61abdbafcfd499e ""
+  "/home/alix/surtitres/diapo.tex" 1763251888.67193 1571 27c28cebf27f4db402eef213d2a75299 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecss0800.tfm" 1136768653 3584 885a9b5d0df19657ad7066a0c4430437 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
@@ -195,13 +195,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1732550495.68892 5467976 8fa19fb43bf3f03a0fabb9383d5aa45b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1732550503 8212249 860ca1586ffbeb00a30872ecb5ad9b59 ""
-  "diapo.aux" 1763140977.86129 6009 e207ca4360f20b65ba1266e8c77eea47 "pdflatex"
-  "diapo.nav" 1763140977.86329 4085 b8c8ab2e113f394f7ad8f1b22510059d "pdflatex"
-  "diapo.out" 1763140977.47329 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "diapo.tex" 1763139625.45176 1358 714f708f4572205ba61abdbafcfd499e ""
-  "frame_blank.tex" 1763138766.43228 29 0e7e93b759e0504cb24c71c034b2a6b7 ""
-  "frames_aprite.tex" 1763139179.35148 4247 4a0dfb80ad26fd0141425cb926d81d27 ""
-  "frames_lacidaremlamano.tex" 1763140976.6743 7076 8d518e9feec8fb1807cf73c6ccfc418f ""
+  "diapo.aux" 1763252008.71577 2526 808fd98f8b58e8082dc0858ed23852fc "pdflatex"
+  "diapo.nav" 1763252008.71877 1574 f5abf7444d939a8c2cd188b6df8c9c87 "pdflatex"
+  "diapo.out" 1763252008.37578 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "diapo.tex" 1763251888.67193 1571 27c28cebf27f4db402eef213d2a75299 ""
+  "frames_princesse.tex" 1763252006.90078 4418 ea0302d1ad82a005742a2e9a8e0e6ea1 ""
   (generated)
   "diapo.aux"
   "diapo.log"

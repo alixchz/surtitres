@@ -1,5 +1,6 @@
 import pandas as pd
 import os 
+import numpy 
 
 template = """
 \\begin{frame}{}
@@ -16,12 +17,12 @@ template = """
 artificial_space = "{\\color{black}.}"
 
 def clean(entry):
-    if type(entry) == float:
+    if type(entry) in (float, numpy.float64):
         return artificial_space
     return entry
 
-for aria in ['lacidaremlamano']:
-    df = pd.read_excel(f'{aria}.ods', engine='odf')
+for aria in ['princesse']:#['aprite', 'lacidaremlamano', 'notteegiornofaticar', 'maquaimaisoffre', 'prenderoquelbrunettino', 'ciboulette', 'jaipasenvie']:
+    df = pd.read_excel(f'textes_source/{aria}.ods', engine='odf')
     df
     tex_filename = f"frames_{aria}.tex"
     if os.path.exists(tex_filename):
