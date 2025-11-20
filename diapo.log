@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.11.25)  16 NOV 2025 01:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.11.25)  17 NOV 2025 18:36
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -127,8 +127,8 @@ Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 \pgfmath@stack@operation=\toks25
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count287
-))) (/usr/share/texlive/texmf-dist/tex/latex/extsizes/size8.clo
-File: size8.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
+))) (/usr/share/texlive/texmf-dist/tex/latex/extsizes/size9.clo
+File: size9.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
  (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
@@ -769,14 +769,14 @@ LaTeX Font Info:    ... okay on input line 39.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(56.9055pt, 341.43307pt, 56.9055pt)
+* h-part:(L,W,R)=(42.67912pt, 369.88583pt, 42.67912pt)
 * v-part:(T,H,B)=(0.0pt, 256.0748pt, 0.0pt)
 * \paperwidth=455.24408pt
 * \paperheight=256.0748pt
-* \textwidth=341.43307pt
+* \textwidth=369.88583pt
 * \textheight=227.62207pt
-* \oddsidemargin=-15.36449pt
-* \evensidemargin=-15.36449pt
+* \oddsidemargin=-29.59087pt
+* \evensidemargin=-29.59087pt
 * \topmargin=-72.26999pt
 * \headheight=14.22636pt
 * \headsep=0.0pt
@@ -785,7 +785,7 @@ LaTeX Font Info:    ... okay on input line 39.
 * \marginparwidth=4.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=7.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=8.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -880,16 +880,18 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 LaTeX Info: Redefining \degres on input line 39.
 LaTeX Info: Redefining \up on input line 39.
- (./diapo.nav) (./frames_princesse.tex
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
+ (./diapo.nav) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}] (./frame_blank.tex [2
+
+]) (./title_frames/title_Prenderòquelbrunettino.tex
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 12.
- [1
+LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <9> not available
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 12.
+ [3
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}] [2
-
-] [3
-
-] [4
+]) (./frames_prenderoquelbrunettino.tex [4
 
 ] [5
 
@@ -913,6 +915,378 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
 
 ] [15
 
+] [16
+
+] [17
+
+] [18
+
+] [19
+
+] [20
+
+] [21
+
+]) (./frame_blank.tex [22
+
+]) (./title_frames/title_Apriteprestoaprite.tex [23
+
+]) (./frames_aprite.tex [24
+
+] [25
+
+] [26
+
+] [27
+
+] [28
+
+] [29
+
+] [30
+
+] [31
+
+] [32
+
+] [33
+
+] [34
+
+] [35
+
+] [36
+
+] [37
+
+] [38
+
+] [39
+
+] [40
+
+] [41
+
+] [42
+
+]) (./frame_blank.tex [43
+
+]) (./title_frames/title_Viarestiservita.tex [44
+
+]) (./frames_viaresti.tex [45
+
+] [46
+
+] [47
+
+] [48
+
+] [49
+
+] [50
+
+] [51
+
+] [52
+
+] [53
+
+] [54
+
+] [55
+
+] [56
+
+] [57
+
+] [58
+
+] [59
+
+] [60
+
+] [61
+
+] [62
+
+] [63
+
+]) (./frame_blank.tex [64
+
+]) (./title_frames/title_Apriteprestoaprite.tex [65
+
+]) (./frames_aprite.tex [66
+
+] [67
+
+] [68
+
+] [69
+
+] [70
+
+] [71
+
+] [72
+
+] [73
+
+] [74
+
+] [75
+
+] [76
+
+] [77
+
+] [78
+
+] [79
+
+] [80
+
+] [81
+
+] [82
+
+] [83
+
+] [84
+
+]) (./frame_blank.tex [85
+
+]) (./title_frames/title_Jaipasenviedefairemapage.tex [86
+
+]) (./frames_jaipasenvie.tex [87
+
+] [88
+
+] [89
+
+] [90
+
+] [91
+
+] [92
+
+] [93
+
+] [94
+
+] [95
+
+] [96
+
+] [97
+
+]) (./frame_blank.tex [98
+
+]) (./title_frames/title_AhcestellelaPrincesse.tex [99
+
+]) (./frames_princesse.tex [100
+
+] [101
+
+] [102
+
+] [103
+
+] [104
+
+] [105
+
+] [106
+
+] [107
+
+] [108
+
+] [109
+
+] [110
+
+] [111
+
+] [112
+
+] [113
+
+] [114
+
+]) (./frame_blank.tex [115
+
+]) (./title_frames/title_Làcidaremlamano.tex [116
+
+]) (./frames_lacidaremlamano_norecit.tex [117
+
+] [118
+
+] [119
+
+] [120
+
+] [121
+
+] [122
+
+] [123
+
+] [124
+
+] [125
+
+] [126
+
+] [127
+
+] [128
+
+] [129
+
+] [130
+
+]) (./frame_blank.tex [131
+
+]) (./title_frames/title_Notteegiornofaticar.tex [132
+
+]) (./frames_notteegiornofaticar.tex [133
+
+] [134
+
+] [135
+
+] [136
+
+] [137
+
+] [138
+
+] [139
+
+] [140
+
+] [141
+
+] [142
+
+] [143
+
+] [144
+
+] [145
+
+] [146
+
+] [147
+
+] [148
+
+] [149
+
+]) (./frame_blank.tex [150
+
+]) (./title_frames/title_Làcidaremlamano.tex [151
+
+]) (./frames_lacidaremlamano.tex [152
+
+] [153
+
+] [154
+
+] [155
+
+] [156
+
+] [157
+
+] [158
+
+] [159
+
+] [160
+
+] [161
+
+] [162
+
+] [163
+
+] [164
+
+] [165
+
+] [166
+
+] [167
+
+] [168
+
+] [169
+
+] [170
+
+] [171
+
+] [172
+
+] [173
+
+] [174
+
+] [175
+
+]) (./frame_blank.tex [176
+
+]) (./title_frames/title_MaqualmaisoffreohDei.tex [177
+
+]) (./frames_maquaimaisoffre.tex [178
+
+] [179
+
+] [180
+
+] [181
+
+] [182
+
+] [183
+
+] [184
+
+] [185
+
+] [186
+
+] [187
+
+] [188
+
+] [189
+
+] [190
+
+] [191
+
+] [192
+
+] [193
+
+] [194
+
+] [195
+
+] [196
+
+] [197
+
+] [198
+
+] [199
+
+] [200
+
+]) (./frame_blank.tex [201
+
 ])
 \tf@nav=\write8
 \openout8 = `diapo.nav'.
@@ -932,18 +1306,18 @@ Package rerunfilecheck Info: File `diapo.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26263 strings out of 474222
- 505479 string characters out of 5748732
+ 27145 strings out of 474222
+ 516807 string characters out of 5748732
  1927975 words of memory out of 5000000
- 47976 multiletter control sequences out of 15000+600000
- 570544 words of font info for 43 fonts, out of 8000000 for 9000
+ 48405 multiletter control sequences out of 15000+600000
+ 576143 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,11n,123p,401b,486s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso8.pfb>
-Output written on diapo.pdf (15 pages, 34129 bytes).
+</usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbo10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso9.pfb>
+Output written on diapo.pdf (201 pages, 197749 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
- 31 named destinations out of 1000 (max. 500000)
+ 1175 PDF objects out of 1200 (max. 8388607)
+ 948 compressed objects within 10 object streams
+ 403 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

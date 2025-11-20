@@ -2,7 +2,7 @@
 % Présentation Beamer : fond noir, texte blanc
 % Compiler avec pdflatex ou xelatex
 
-\documentclass[8pt,aspectratio=169]{beamer}
+\documentclass[9pt,aspectratio=169]{beamer}
 
 % Packages utiles
 \usepackage[utf8]{inputenc}
@@ -31,20 +31,62 @@
 \usepackage{xcolor}
 \definecolor{lightgray}{rgb}{0.7, 0.7, 0.7}
 
-\setbeamersize{text margin left=2cm, text margin right=2cm}
+\setbeamersize{text margin left=1.5cm, text margin right=1.5cm}
 
 % Remove navigation symbols (optionnel)
 \setbeamertemplate{navigation symbols}{}
 
 \begin{document}
 
-%\input{frames_aprite.tex}
-%\input{frame_blank.tex}
-%\input{frames_lacidaremlamano.tex}
-%\input{frames_notteegiornofaticar.tex}
-%\input{frames_maquaimaisoffre.tex}
-%\input{frames_prenderoquelbrunettino.tex}
-%\input{frames_ciboulette.tex}
-%\input{frames_jaipasenvie.tex}
+\begin{frame}{}
+    \centering
+    \vspace{-2.5cm}
+    Classe de chant lyrique \\
+    \textbf{Restitution de la master-class Théâtre}\\
+    %avec Élisabeth Potier \\
+    \vskip0.2cm
+    17 novembre 2025
+    \vskip0.2cm
+\end{frame}
+\input{frame_blank.tex}
+\input{title_frames/title_Prenderòquelbrunettino.tex}
+\input{frames_prenderoquelbrunettino.tex}
+\input{frame_blank.tex}
+
+\input{title_frames/title_Apriteprestoaprite.tex}
+\input{frames_aprite.tex}
+\input{frame_blank.tex}
+
+\input{title_frames/title_Viarestiservita.tex}
+\input{frames_viaresti.tex}
+\input{frame_blank.tex}
+
+\input{title_frames/title_Apriteprestoaprite.tex}
+\input{frames_aprite.tex}
+\input{frame_blank.tex}
+
+\input{title_frames/title_Jaipasenviedefairemapage.tex}
+\input{frames_jaipasenvie.tex}
+\input{frame_blank.tex}
+
+\input{title_frames/title_AhcestellelaPrincesse.tex}
 \input{frames_princesse.tex}
+\input{frame_blank.tex}
+
+\input{title_frames/title_Làcidaremlamano.tex}
+\input{frames_lacidaremlamano_norecit.tex}
+\input{frame_blank.tex}
+
+\input{title_frames/title_Notteegiornofaticar.tex}
+\input{frames_notteegiornofaticar.tex}
+\input{frame_blank.tex}
+
+\input{title_frames/title_Làcidaremlamano.tex}
+\input{frames_lacidaremlamano.tex}
+\input{frame_blank.tex}
+
+\input{title_frames/title_MaqualmaisoffreohDei.tex}
+\input{frames_maquaimaisoffre.tex}
+\input{frame_blank.tex}
+%\input{frames_ciboulette.tex}
 \end{document}
