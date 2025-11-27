@@ -70,7 +70,7 @@ if 'project_id' not in st.session_state:
 
 # Page d'accueil - Sélection/Création de projet
 if st.session_state.project_id is None:
-    st.title("📁 Accéder à un projet")
+    st.title("🎶 Accéder à un projet")
     st.markdown("---")
     
     # Afficher un message si on vient de quitter un projet
@@ -79,7 +79,7 @@ if st.session_state.project_id is None:
         del st.session_state.just_left_project
     
     # Onglets pour choisir entre rejoindre ou créer un projet
-    tab1, tab2 = st.tabs(["Rejoindre un projet existant", "Créer un nouveau projet"])
+    tab1, tab2 = st.tabs(["📁 Rejoindre un projet existant", "➕ Créer un nouveau projet"])
     
     with tab1:
         st.subheader("Rejoindre un projet")
@@ -197,6 +197,6 @@ else:
 # Pied de page
 st.markdown("---")
 st.markdown(
-    "<div style='text-align: center; color: gray;'>Générateur de surti</div>", 
+    "<div style='text-align: center; color: gray;'>Générateur de surtitres</div>", 
     unsafe_allow_html=True
 )
