@@ -16,13 +16,14 @@ def init_databases():
         )
     ''')
     
-    # Table morceaux (simplifiée)
+    # Table morceaux 
     c.execute('''
         CREATE TABLE IF NOT EXISTS morceaux (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             projet_id TEXT,
             ordre INTEGER,
-            titre TEXT,
+            air TEXT,
+            extrait_de TEXT,
             compositeur TEXT,
             annee TEXT,
             FOREIGN KEY (projet_id) REFERENCES projects (id)

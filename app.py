@@ -7,8 +7,8 @@ from utils import init_databases
 
 # Configuration de la page
 st.set_page_config(
-    page_title="Gestion de Projets",
-    page_icon="📁",
+    page_title="Générateur de Surtitres",
+    page_icon="💬",
     layout="wide"
 )
 
@@ -70,7 +70,7 @@ if 'project_id' not in st.session_state:
 
 # Page d'accueil - Sélection/Création de projet
 if st.session_state.project_id is None:
-    st.title("📁 Gestion de Projets")
+    st.title("📁 Accéder à un projet")
     st.markdown("---")
     
     # Afficher un message si on vient de quitter un projet
@@ -163,7 +163,7 @@ else:
         st.title(f"Projet : {st.session_state.project_id}")
     
     with col2:
-        if st.button("🚪 Quitter le projet"):
+        if st.button("🚪 Retour à l'accès projets"):
             st.session_state.project_id = None
             st.session_state.project_data = None
             st.session_state.just_left_project = True
@@ -176,23 +176,13 @@ else:
     # Affichage des informations du projet
     project_data = st.session_state.project_data
     if project_data:
-        col1, col2, col3 = st.columns(3)
-        
+        col1, col2 = st.columns(2)
         with col1:
-            st.metric("Créateur", project_data[3])
             st.metric("Date de création", datetime.datetime.fromisoformat(project_data[1]).strftime("%d/%m/%Y %H:%M"))
-        
         with col2:
-            st.metric("Dernière modification", datetime.datetime.fromisoformat(project_data[2]).strftime("%d/%m/%Y %H:%M"))
-        
-        with col3:
-            st.metric("Statut", "Actif")
-        
-    # Section principale de l'application
-    st.subheader("Description du projet")
-    st.write(project_data[4] if project_data else "Aucune description")
-    
-    st.markdown("---")
+            st.subheader("Description")
+            st.write(project_data[4])
+        st.markdown("---")
         
     # Vérifier si on est en mode édition de paroles
     if 'current_morceau_id' in st.session_state:
@@ -207,6 +197,6 @@ else:
 # Pied de page
 st.markdown("---")
 st.markdown(
-    "<div style='text-align: center; color: gray;'>Application de gestion de projets</div>", 
+    "<div style='text-align: center; color: gray;'>Générateur de surti</div>", 
     unsafe_allow_html=True
 )
