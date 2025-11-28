@@ -1,18 +1,29 @@
 import sqlite3
 
+default_concert_frame = """\\begin{frame}{}
+    \\centering
+    \\vspace{-2.5cm}
+    Classe de chant lyrique \\\\
+    \\textbf{Nom du concert}\\\\\\
+    \\vskip0.2cm
+    Date
+    \\vskip0.2cm
+\\end{frame}"""
+
 # Initialisation de la base de données
 def init_databases():
     conn = sqlite3.connect('projects.db')
     c = conn.cursor()
     
     # Table projects (existante)
-    c.execute('''
+    c.execute(f'''
         CREATE TABLE IF NOT EXISTS projects (
             id TEXT PRIMARY KEY,
             created_date TEXT,
             modified_date TEXT,
             creator TEXT,
-            description TEXT
+            description TEXT,
+            concert_frame TEXT DEFAULT '{default_concert_frame}'
         )
     ''')
     

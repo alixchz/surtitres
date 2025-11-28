@@ -4,6 +4,7 @@ import datetime
 import re
 import pandas as pd
 import io
+from surtitres import generate_frame_title, generate_text, make_latex
 
 # Constante pour la limite de caractères
 NB_CAR_MAX = 70
@@ -357,7 +358,12 @@ def edition_paroles_tableur(morceau_id, morceau_titre=""):
                 st.session_state.edition_ligne_index = len(df_paroles) - 1
                 st.success("✅ Nouvelle ligne ajoutée")
                 st.rerun()
-    
+        
+        st.markdown("---")
+        st.subheader("Tester le rendu final")
+        content = generate_frame_title(morceau_id) + generate_text(df_paroles)
+        make_latex(content)
+
     else:
         st.info("ℹ️ Aucun tableur n'a été importé pour ce morceau.")
 

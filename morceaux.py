@@ -1,7 +1,34 @@
 import streamlit as st
 import pandas as pd
 import sqlite3
-from paroles import tableur_existe
+from paroles import tableur_existe, charger_paroles_depuis_tableur
+from surtitres import generate_frame_title, generate_text, make_latex
+
+def get_concert_frame(project_id):
+    """Récupérer le concert_frame d'un projet"""
+    conn = sqlite3.connect('projects.db')
+    c = conn.cursor()
+    c.execute('SELECT concert_frame FROM projects WHERE id = ?', (project_id,))
+    result = c.fetchone()
+    conn.close()
+    return result[0] if result else ""
+
+def update_concert_frame(project_id, new_concert_frame):
+    """Mettre à jour le concert_frame d'un projet"""
+    conn = sqlite3.connect('projects.db')
+    c = conn.cursor()
+    c.execute('UPDATE projects SET concert_frame = ? WHERE id = ?', (new_concert_frame, project_id))
+    conn.commit()
+    conn.close()
+    return True
+
+def get_project(project_id):
+    conn = sqlite3.connect('projects.db')
+    c = conn.cursor()
+    c.execute('SELECT * FROM projects WHERE id = ?', (project_id,))
+    result = c.fetchone()
+    conn.close()
+    return result  # Doit retourner (id, created_date, modified_date, creator, description, concert_frame)
 
 def charger_morceaux(projet_id):
     conn = sqlite3.connect('projects.db')
@@ -350,3 +377,57 @@ def gestion_morceaux(projet_id):
                 if nouveau_id:
                     st.success(f"✅ Morceau ajouté (ordre {ordre_final})")
                     st.rerun()
+
+    # Afficher pdf
+    st.markdown("---")
+    st.subheader("📄 Aperçu PDF des surtitres")
+   
+    # Récupérer concert_frame
+    concert_frame = get_concert_frame(st.session_state.project_id)
+
+    # Interface en deux colonnes
+    col1, col2, col3 = st.columns([3, 1, 3])
+
+    with col1:
+        concert_frame_edit = st.text_area(
+            "Code LaTeX du premier transparent :", 
+            concert_frame, 
+            height=250,
+            key="concert_frame_editor",
+            label_visibility="collapsed"
+        )
+
+    with col2:
+        st.write("")  # Espacement
+        st.write("")
+        
+        # Bouton de sauvegarde
+        if st.button("💾 Sauvegarder", use_container_width=True):
+            if update_concert_frame(st.session_state.project_id, concert_frame_edit):
+                st.session_state.project_data = get_project(st.session_state.project_id)
+                st.success("✅ Template sauvegardé")
+                st.rerun()
+        
+        # Bouton de réinitialisation
+        if st.button("🔄 Par défaut", use_container_width=True):
+            default_frame = """\\begin{frame}{}
+        \\centering
+        \\vspace{-2.5cm}
+        Classe de chant lyrique \\\\
+        \\textbf{Nom du concert}\\\\\\
+        \\vskip0.2cm
+        Date
+        \\vskip0.2cm
+    \\end{frame}"""
+            if update_concert_frame(st.session_state.project_id, default_frame):
+                st.session_state.project_data = get_project(st.session_state.project_id)
+                st.success("✅ Template réinitialisé")
+                st.rerun()
+                
+    latex_content = ""
+    # Pourquoi je vois une liste vide ?
+    for morceau_id in [m[0] for m in morceaux]:
+        frame_title = generate_frame_title(morceau_id)
+        texte = generate_text(charger_paroles_depuis_tableur(morceau_id))
+        latex_content += frame_title + "\n" + texte + "\n"
+    make_latex(concert_frame_edit + latex_content)
