@@ -188,7 +188,7 @@ def edition_paroles_tableur(morceau_id, morceau_titre=""):
     
     if tableur_existant or has_paroles_data:
         if tableur_existant:
-            col_statut, col_derniere_modif, _ = st.columns([2, 2, 6])
+            col_statut, col_derniere_modif, _ = st.columns([1, 1, 1])
             with col_statut:
                 helper_status = {
                     "🔴 Aucun texte saisi":'not_started', 
