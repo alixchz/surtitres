@@ -5,6 +5,7 @@ import re
 import pandas as pd
 import io
 from surtitres import generate_frame_title, generate_text, make_latex
+from morceaux_back import get_morceau, mettre_a_jour_morceau
 
 # Constante pour la limite de caractères
 NB_CAR_MAX = 70
@@ -159,7 +160,7 @@ def obtenir_type_mime(nom_fichier):
 
 def edition_paroles_tableur(morceau_id, morceau_titre=""):
     # Bouton retour
-    if st.button("← Retour à la liste des morceaux"):
+    if st.button("↩️ Retour à la liste des morceaux"):
         if 'current_morceau_id' in st.session_state:
             del st.session_state.current_morceau_id
         if 'current_morceau_titre' in st.session_state:
@@ -167,6 +168,8 @@ def edition_paroles_tableur(morceau_id, morceau_titre=""):
         if 'edition_ligne_index' in st.session_state:
             del st.session_state.edition_ligne_index
         st.rerun()
+    
+    _, ordre, morceau_titre, compositeur, annee, extrait_de, text_status = get_morceau(morceau_id)
 
     st.subheader(f"📝 Édition du texte - {morceau_titre}")
     
@@ -185,7 +188,29 @@ def edition_paroles_tableur(morceau_id, morceau_titre=""):
     
     if tableur_existant or has_paroles_data:
         if tableur_existant:
-            st.info(f"Dernière modification : {datetime.datetime.fromisoformat(tableur_existant[2]).strftime('%d/%m/%Y %H:%M')}")
+            col_statut, col_derniere_modif, _ = st.columns([2, 2, 6])
+            with col_statut:
+                helper_status = {
+                    "🔴 Aucun texte saisi":'not_started', 
+                    "🟠 Texte saisi, à vérifier":"draft",
+                    "🟢 Texte validé":'validated'
+                }
+
+                def status_change():
+                    nonlocal nouveau_status
+                    nouveau_status = helper_status[st.session_state[f"select_status_{morceau_id}"]]
+                    mettre_a_jour_morceau(morceau_id, ordre, morceau_titre, compositeur, annee, extrait_de, nouveau_status)
+
+                nouveau_status = st.selectbox(
+                    "Avancement",
+                    options=list(helper_status.keys()),
+                    index=list(helper_status.values()).index(text_status),
+                    key=f"select_status_{morceau_id}",
+                    on_change=status_change)
+
+                
+            with col_derniere_modif:
+                st.info(f"Dernière modification : {datetime.datetime.fromisoformat(tableur_existant[2]).strftime('%d/%m/%Y %H:%M')}")
         else:
             st.info("Tableur vide créé - prêt à être édité")
 

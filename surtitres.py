@@ -31,7 +31,7 @@ template_titre = """
         .
     }
     \\vskip0.2cm
-    \\textbf{\\textit{opera}} -- compositeur (year)\\\\
+    opera compositeur year\\\\
     « air »
 \end{frame}"""
 
@@ -61,7 +61,9 @@ def generate_frame_title(morceau_id):
     morceau = get_morceau(morceau_id)
     air, compositeur, annee, extrait_de = morceau[2], morceau[3], morceau[4], morceau[5]
 
-    title_frame = template_titre.replace("opera", extrait_de).replace("air", air).replace("compositeur", compositeur).replace("year", str(annee))
+    title_frame = template_titre.replace("air", air).replace("compositeur", compositeur)
+    title_frame = title_frame.replace("opera", f"\\textbf{{\\textit{{extrait_de}}}} -- ".replace("extrait_de", extrait_de)) if len(extrait_de) > 0 else title_frame.replace("opera", "")
+    title_frame = title_frame.replace("year", f"({str(annee)})") if len(annee) >0 else title_frame.replace("year", "")
     return title_frame
 
 def generate_text(paroles_df):  
@@ -158,9 +160,12 @@ def make_latex(frames):
             )
 
             st.markdown(pdf_display, unsafe_allow_html=True)
-
+            col_pdf, col_tex = st.columns(2)
             # --- Bouton de téléchargement ---
-            st.download_button("Télécharger le PDF", pdf_bytes, file_name="surtitres.pdf")
+            with col_pdf:
+                st.download_button("Télécharger le PDF", pdf_bytes, file_name="surtitres.pdf")
+            with col_tex:
+                st.download_button("Télécharger le code LaTeX", content, file_name="surtitres.tex")
 
         else:
             st.error("Erreur de compilation ❌")

@@ -4,6 +4,7 @@ from projets import project_exists, create_project, get_project, is_valid_projec
 from morceaux import gestion_morceaux
 from paroles import edition_paroles_tableur
 from utils import init_databases
+import requests
 
 # Configuration de la page
 st.set_page_config(
@@ -52,6 +53,24 @@ def set_project_to_query_params(project_id):
                 st.experimental_set_query_params()
     except Exception as e:
         st.error(f"Erreur lors de la sauvegarde des paramètres: {e}")
+
+def send_db_via_telegram():
+    BOT_TOKEN = "8241415176:AAFyqrtEWmqkFsGZAO7gVVn9uK90r4KpeiI"
+    CHAT_ID = "847274562"   # ex: 123456789
+    FILE_PATH = "projects.db"
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendDocument"
+    
+    with open(FILE_PATH, "rb") as f:
+        response = requests.post(
+            url,
+            data={"chat_id": CHAT_ID},
+            files={"document": f}
+    )
+
+    if response.status_code == 200:
+        print("✅ Fichier envoyé avec succès")
+    else:
+        print("❌ Erreur lors de l'envoi :", response.text)
 
 left_margin, content, right_margin = st.columns([1, 20, 1])
 
@@ -204,3 +223,5 @@ with content:
         "<div style='text-align: center; color: gray;'>Générateur de surtitres</div>", 
         unsafe_allow_html=True
     )
+    if st.button("Sauvegarder la base de données via Telegram", key="save_db_telegram"):
+        send_db_via_telegram()

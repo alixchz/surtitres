@@ -37,6 +37,7 @@ def init_databases():
             extrait_de TEXT,
             compositeur TEXT,
             annee TEXT,
+            text_status TEXT CHECK (text_status IN ('not_started', 'draft', 'validated')) DEFAULT 'not_started',
             FOREIGN KEY (projet_id) REFERENCES projects (id)
         )
     ''')
