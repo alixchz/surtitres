@@ -225,3 +225,4 @@ with content:
     )
     if st.button("Sauvegarder la base de données via Telegram", key="save_db_telegram"):
         send_db_via_telegram()
+    st.download_button("Télécharger la base de données", data=open("projects.db", "rb").read(), file_name="projects.db")
