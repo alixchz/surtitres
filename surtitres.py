@@ -9,7 +9,7 @@ import base64
 
 template = """
 \\begin{frame}{}
-    \centering
+    \\centering
     \\vspace{-2.5cm}
     \\textit{\color{lightgray}
         original_1  \\\\
@@ -24,7 +24,7 @@ artificial_space = "{\\color{black}.}"
 
 template_titre = """
 \\begin{frame}{}
-    \centering
+    \\centering
     \\vspace{-2.5cm}
     \\textit{\color{black}
         .  \\\\
