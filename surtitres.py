@@ -38,7 +38,7 @@ template_titre = """
 def clean(entry):
     if type(entry) in (float, numpy.float64):
         return artificial_space
-    return entry
+    return entry.replace('[', '').replace(']', '')
 
 def cleartitle(entry):
     # garder uniquement les lettres sans accents sans espaces
@@ -95,7 +95,6 @@ default_tex = r"""
     \usepackage{lmodern}
     \usepackage{hyperref}
     \usepackage{graphicx}
-    \usepackage{minted} % si vous voulez du code (nécessite -shell-escape)
 
     % Couleurs : fond noir, texte blanc
     \setbeamercolor{background canvas}{bg=black}
@@ -169,5 +168,12 @@ def make_latex(frames):
 
         else:
             st.error("Erreur de compilation ❌")
-            st.text(result.stdout.decode())
-            st.text(result.stderr.decode())
+            def safe_decode(data):
+                try:
+                    return data.decode("utf-8")
+                except UnicodeDecodeError:
+                    return data.decode("latin-1")
+
+            st.text(safe_decode(result.stdout))
+            st.text(safe_decode(result.stderr))
+            st.download_button("Télécharger le code LaTeX", content, file_name="surtitres.tex")
