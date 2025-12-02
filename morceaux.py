@@ -245,35 +245,41 @@ def gestion_morceaux(projet_id):
         st.write("")  # Espacement
         st.write("")
         
+        col_sauv, col_cancel,_ = st.columns(3)#([1,1,2])
         # Bouton de sauvegarde
-        if st.button("💾 Sauvegarder", type="primary"):
-            if update_concert_frame(st.session_state.project_id, concert_frame_edit):
-                st.session_state.project_data = get_project(st.session_state.project_id)
-                st.success("✅ Template sauvegardé")
-                st.rerun()
-        
-        # Bouton de réinitialisation
-        if st.button("🔄 Réinitialiser", help="Revenir au modèle pour la diapo de titre"):
-            default_frame = """\\begin{frame}{}
-        \\centering
-        \\vspace{-2.5cm}
-        Classe de chant lyrique \\\\
-        \\textbf{Nom du concert}\\\\\\
-        \\vskip0.2cm
-        Date
-        \\vskip0.2cm
-    \\end{frame}"""
-            if update_concert_frame(st.session_state.project_id, default_frame):
-                st.session_state.project_data = get_project(st.session_state.project_id)
-                st.success("✅ Template réinitialisé")
-                st.rerun()
+        with col_sauv:
+            if st.button("💾 Sauvegarder", type="primary"):
+                if update_concert_frame(st.session_state.project_id, concert_frame_edit):
+                    st.session_state.project_data = get_project(st.session_state.project_id)
+                    st.success("✅ Template sauvegardé")
+                    st.rerun()
+        with col_cancel:
+            # Bouton de réinitialisation
+            if st.button("🔄 Réinitialiser", help="Revenir au modèle pour la diapo de titre"):
+                default_frame = """\\begin{frame}{}
+            \\centering
+            \\vspace{-2.5cm}
+            Classe de chant lyrique \\\\
+            \\textbf{Nom du concert}\\\\\\
+            \\vskip0.2cm
+            Date
+            \\vskip0.2cm
+        \\end{frame}"""
+                if update_concert_frame(st.session_state.project_id, default_frame):
+                    st.session_state.project_data = get_project(st.session_state.project_id)
+                    st.success("✅ Template réinitialisé")
+                    st.rerun()
         use_text = st.checkbox("Inclure les textes des morceaux", value=True)
-        add_blank = st.checkbox("Ajouter une diapositive blanche entre chaque morceau", value=True)
+        add_blank = st.checkbox("Ajouter une diapositive blanche entre chaque morceau", value=False)
+        mode = st.selectbox("Mode",['poème','opéra'])
 
     latex_content = ""
     frame_blank = "\\begin{frame}{} \end{frame}\n" if add_blank else ""
     for morceau_id in [m[0] for m in morceaux]:
-        frame_title = generate_frame_title(morceau_id)
-        texte = generate_text(charger_paroles_depuis_tableur(morceau_id)) if use_text else ""
-        latex_content += frame_title + "\n" + texte + "\n" + frame_blank + "\n"
-    make_latex(concert_frame_edit + latex_content)
+        frame_title = generate_frame_title(morceau_id, mode=mode)
+        texte = generate_text(charger_paroles_depuis_tableur(morceau_id), mode=mode, title=frame_title) if use_text else ""
+        if mode == 'opéra':
+            latex_content += frame_title + "\n" + texte + "\n" + frame_blank + "\n"
+        elif mode == 'poème':
+            latex_content += texte + "\n" + frame_blank + "\n"
+    make_latex(concert_frame_edit + latex_content, mode=mode)

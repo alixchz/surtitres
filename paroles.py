@@ -386,7 +386,8 @@ def edition_paroles_tableur(morceau_id, morceau_titre=""):
         
         st.markdown("---")
         st.subheader("Tester le rendu final")
-        content = generate_frame_title(morceau_id) + generate_text(df_paroles)
+        titre = generate_frame_title(morceau_id, mode='poème')
+        content = generate_text(df_paroles, mode='poème', title=titre)
         make_latex(content)
 
     else:
